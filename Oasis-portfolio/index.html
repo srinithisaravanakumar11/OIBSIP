@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Srinithi | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="logo">Portfolio</div>
+    <nav id="navMenu">
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </div>
+</header>
+
+<section class="hero" id="home" style="background-image: url('https://i.ibb.co/DHsPGJ8B/Chat-GPT-Image-Jan-4-2026-05-35-48-PM.png');">
+  <div class="overlay"></div>
+  <div class="container hero-content">
+
+    <div class="profile-circle">S</div>
+
+    <h1>Srinithi Saravanakumar</h1>
+    <h2>MERN Stack Developer</h2>
+
+    <p>
+      I am a II year Computer Science student and MERN Stack Developer passionate about building scalable web applications, crafting intuitive user interfaces, and exploring backend systems that power modern digital products.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#contact" class="btn primary">Get in Touch</a>
+      <a href="https://drive.google.com/file/d/1X7W_mgLVr0ED-C9FK6a5-UU3jEO17LKp/view?usp=sharing" class="btn outline" target="_blank">Download CV</a>
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
+
+<section class="skills" id="skills">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+    <span class="section-line"></span>
+
+    <div class="skills-wrapper">
+      <div class="skills-track">
+
+        <div class="skill-card">
+          <i class="fas fa-star"></i>
+          <h3>Top Skills</h3>
+          <div class="skill-tags">
+            <span>JavaScript</span><span>TypeScript</span><span>React</span>
+            <span>Node.js</span><span>HTML5</span><span>CSS3</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <i class="fas fa-code"></i>
+          <h3>Frontend</h3>
+          <div class="skill-tags">
+            <span>React</span><span>Vue.js</span><span>Next.js</span>
+            <span>Tailwind CSS</span><span>Sass</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <i class="fas fa-server"></i>
+          <h3>Backend</h3>
+          <div class="skill-tags">
+            <span>Node.js</span><span>Express</span><span>Python</span>
+            <span>Django</span><span>PostgreSQL</span><span>MongoDB</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <i class="fas fa-toolbox"></i>
+          <h3>Tools & Others</h3>
+          <div class="skill-tags">
+            <span>Git</span><span>Docker</span><span>AWS</span>
+            <span>Figma</span><span>Webpack</span><span>Jest</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="timeline" id="experience">
+  <div class="container">
+    <h2 class="section-title">Experience & Education</h2>
+    <span class="section-line"></span>
+
+    <div class="timeline-wrapper">
+
+      <div class="timeline-line"></div>
+
+      <!-- Experience 1 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="badge">Experience</span>
+          <h3>SAP Intern</h3>
+          <p class="org">Kaliber Consulting Pvt. Ltd. — Onsite</p>
+          <p class="duration">June 2025</p>
+          <ul>
+            <li>Developed a customized Employee Management System using SAP CDS Views.</li>
+            <li>Designed custom transparent tables for employee master and transactional data.</li>
+            <li>Implemented associations, domains, and data elements to ensure data integrity.</li>
+            <li>Structured the system for efficient querying and future extensibility.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Experience 2 -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="badge">Experience</span>
+          <h3>Web Development & Designing Intern</h3>
+          <p class="org">Oasis Infobyte — Remote</p>
+          <p class="duration">Dec 2025 - Jan 2026</p>
+          <ul>
+            <li>Designed and developed a responsive landing page using HTML and CSS.</li>
+            <li>Built a personal portfolio website with multiple sections and smooth navigation.</li>
+            <li>Created a temperature converter web app using HTML, CSS, and JavaScript.</li>
+            <li>Focused on clean layout structure, spacing, alignment, and user-friendly UI.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <span class="badge education">Education</span>
+
+          <div class="edu-block">
+            <h3>Undergraduate</h3>
+            <p class="org">B.E. Computer Science and Engineering</p>
+            <p class="school">St. Joseph’s Institute of Technology</p>
+            <p class="duration">2024 – 2028</p>
+          </div>
+
+          <div class="edu-block">
+            <h3>Higher Secondary (12th)</h3>
+            <p class="org">CBSE</p>
+            <p class="school">Edustar International School</p>
+            <p class="duration">2023 – 2024</p>
+          </div>
+
+          <div class="edu-block">
+            <h3>Secondary (10th)</h3>
+            <p class="org">CBSE</p>
+            <p class="school">Ramco Vidyalaya</p>
+            <p class="duration">2021 – 2022</p>
+          </div>
+
+        </div>
+      </div>
+    
+    </div>
+  </div>
+</section>
+
+<section class="projects-section" id="projects">
+  <h2 class="section-title">Projects</h2>
+  <div class="section-underline"></div>
+
+  <div class="projects-container">
+    <div class="project-card">
+      <h3>Personal Portfolio Website</h3>
+      <p>
+        Designed and developed a fully responsive personal portfolio website to showcase my profile, skills, education, experience, and projects. Focused on clean layout, smooth navigation, and professional UI design optimized for both desktop and mobile devices.
+      </p>
+      <div class="project-tech">
+        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+      </div>
+      <div class="project-links">
+        <a href="https://srinithisaravanakumar11.github.io/OIBSIP/Oasis%20-%20portfolio/" target="_blank" class="btn-outline">Live Demo</a>
+        <a href="https://github.com/srinithisaravanakumar11/OIBSIP/tree/main/Oasis%20-%20portfolio" target="_blank" class="btn-fill">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Responsive Landing Page</h3>
+      <p>
+        Created a modern landing page with a strong visual hierarchy, call-to-action buttons, and responsive grid layout. Ensured cross-browser compatibility and optimized the UI for different screen sizes.
+      </p>
+      <div class="project-tech">
+        <span>HTML</span><span>CSS</span>
+      </div>
+      <div class="project-links">
+        <a href="https://srinithisaravanakumar11.github.io/OIBSIP/" target="_blank" class="btn-outline">Live Demo</a>
+        <a href="https://github.com/srinithisaravanakumar11/OIBSIP" target="_blank" class="btn-fill">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Temperature Converter Web App</h3>
+      <p>
+        Built a simple and interactive temperature conversion tool allowing users to convert between Celsius, Fahrenheit, and Kelvin. Implemented real-time input handling and validation using JavaScript.
+      </p>
+      <div class="project-tech">
+        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+      </div>
+      <div class="project-links">
+        <a href="#" target="_blank" class="btn-outline">Live Demo</a>
+        <a href="#" target="_blank" class="btn-fill">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <h2 class="section-title">Get in Touch</h2>
+  <div class="section-underline"></div>
+
+  <p class="contact-text">
+    I'm always open to discussing new opportunities, collaborations, and interesting projects.
+  </p>
+
+  <a href="mailto:srinithisaravanakumar11@gmail.com" class="contact-email">
+    <i class="fa-regular fa-envelope"></i>
+    srinithisaravanakumar11@gmail.com
+  </a>
+
+  <div class="contact-socials">
+    <a href="https://github.com/srinithisaravanakumar11" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+    <a href="https://linkedin.com/in/srinithi-saravanakumar-737a1a32a" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://twitter.com/" target="_blank" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="mailto:srinithisaravanakumar11@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>© 2026 Srinithi Saravanakumar. All rights reserved.</p>
+    <p class="footer-subtext">Designed and built by me as part of my web development journey.</p>
+  </div>
+</footer>
