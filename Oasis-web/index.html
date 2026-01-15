@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TemFlow — Temperature Converter</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="header-inner">
+
+    <div class="brand">
+      <img src="https://i.ibb.co/yBdfCkYj/Chat-GPT-Image-Jan-14-2026-05-49-17-PM.png" alt="TemFlow Logo">
+      <span>TemFlow</span>
+    </div>
+
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Temperature Converter</a>
+      <a href="#">Systems</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#">Home</a>
+    <a href="#">Temperature Converter</a>
+    <a href="#">Systems</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Temperature Converter</h1>
+    <p>
+      Temperature is a fundamental aspect of our daily lives and it can be measured in different units. The most common temperature scales are Fahrenheit, Celsius, and Kelvin. Fahrenheit, primarily used in the United States, sets the freezing point of water at 32°F and boiling at 212°F. Celsius, widely used worldwide, places these points at 0°C and 100°C, respectively. Kelvin, used in scientific contexts, starts at absolute zero, the coldest possible temperature, making it essential for scientific calculations.
+    </p>
+  </div>
+</section>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+</script>
+
+</body>
+</html>
+
+<section class="converter-section" id="converter">
+  <div class="converter-card">
+
+    <div class="converter-grid">
+
+      <div class="field-group">
+        <label for="tempInput">Enter Temperature</label>
+        <input type="number" id="tempInput" placeholder="Enter value" />
+      </div>
+
+      <div class="field-group">
+        <label for="conversionType">Select Conversion Type</label>
+        <select id="conversionType">
+          <option value="f2c">Fahrenheit to Celsius</option>
+          <option value="c2f">Celsius to Fahrenheit</option>
+          <option value="c2k">Celsius to Kelvin</option>
+          <option value="k2c">Kelvin to Celsius</option>
+          <option value="f2k">Fahrenheit to Kelvin</option>
+          <option value="k2f">Kelvin to Fahrenheit</option>
+        </select>
+      </div>
+
+    </div>
+
+    <button class="convert-btn" onclick="convertTemp()">Convert</button>
+
+    <div class="result-area" id="resultArea">
+      <div class="result-label" id="resultLabel">Converted Result</div>
+      <div class="result-value" id="resultValue">—</div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function convertTemp() {
+  const input = document.getElementById("tempInput");
+  const type = document.getElementById("conversionType").value;
+  const resultValue = document.getElementById("resultValue");
+
+  const val = parseFloat(input.value);
+
+  if (isNaN(val)) {
+    input.classList.add("error");
+    input.classList.add("shake");
+    setTimeout(() => {
+      input.classList.remove("shake");
+    }, 400);
+    return;
+  }
+
+  input.classList.remove("error");
+
+  let result;
+  let unit;
+
+  switch (type) {
+    case "f2c":
+      result = (val - 32) * 5/9;
+      unit = "°C";
+      break;
+    case "c2f":
+      result = (val * 9/5) + 32;
+      unit = "°F";
+      break;
+    case "c2k":
+      result = val + 273.15;
+      unit = "K";
+      break;
+    case "k2c":
+      result = val - 273.15;
+      unit = "°C";
+      break;
+    case "f2k":
+      result = (val - 32) * 5/9 + 273.15;
+      unit = "K";
+      break;
+    case "k2f":
+      result = (val - 273.15) * 9/5 + 32;
+      unit = "°F";
+      break;
+  }
+
+  resultValue.textContent = result.toFixed(2) + " " + unit;
+}
+</script>
+
+<section class="systems-section" id="systems">
+  <div class="systems-container">
+
+    <p class="systems-intro">
+      Temperature measurement is crucial in engineering and the process industry, where precise control over thermal conditions is essential. Engineers and operators rely on accurate temperature data to ensure the safety, efficiency, and quality of processes in fields such as chemical manufacturing, materials science, and mechanical engineering. Different temperature scales, including Fahrenheit, Celsius, and Kelvin, are used depending on the application and industry standards. Understanding and converting between these scales is vital for maintaining optimal conditions and achieving desired outcomes in various industrial processes.
+    </p>
+
+    <div class="scale-block">
+      <h2>Fahrenheit</h2>
+      <p>The Fahrenheit scale, developed by Daniel Gabriel Fahrenheit in 1724, is based on two fixed points: the temperature of a brine solution (0°F) and the average human body temperature (approximately 100°F, originally set at 96°F). Water freezes at 32°F and boils at 212°F under standard atmospheric conditions. This scale is mainly used in the United States and its territories, providing a practical range for everyday weather and temperature measurements.</p>
+
+      <h4>Conversion formulas:</h4>
+      <ul>
+        <li>°C = (°F − 32) × 5 / 9</li>
+        <li>K = (°F − 32) × 5 / 9 + 273.15</li>
+      </ul>
+
+      <h4>Typical uses:</h4>
+      <ul>
+        <li>Indoor climate control systems</li>
+        <li>Weather forecasting</li>
+        <li>Food safety and storage guidelines</li>
+      </ul>
+
+      <h4>Geographical areas:</h4>
+      <ul>
+        <li>United States</li>
+        <li>Bahamas</li>
+        <li>Cayman Islands</li>
+      </ul>
+    </div>
+
+    <div class="scale-block">
+      <h2>Celsius</h2>
+      <p>The Celsius scale, also known as the centigrade scale, was developed by Swedish astronomer Anders Celsius in 1742. It is based on the freezing point (0°C) and boiling point (100°C) of water at 1 atmosphere of pressure. The scale is part of the metric system and is used globally for most scientific, medical, and everyday temperature measurements. The simplicity of its 100-degree interval between the defined points makes it intuitive and widely adopted.</p>
+
+      <h4>Conversion formulas:</h4>
+      <ul>
+        <li>°F = (°C × 9 / 5) + 32</li>
+        <li>K = °C + 273.15</li>
+      </ul>
+
+      <h4>Typical uses:</h4>
+      <ul>
+        <li>Scientific research and laboratories</li>
+        <li>Manufacturing process control</li>
+        <li>Environmental monitoring</li>
+      </ul>
+
+      <h4>Geographical areas:</h4>
+      <ul>
+        <li>Europe</li>
+        <li>India</li>
+        <li>Australia</li>
+        <li>Most countries worldwide</li>
+      </ul>
+    </div>
+
+    <div class="scale-block">
+      <h2>Kelvin</h2>
+      <p>The Kelvin scale, named after physicist Lord Kelvin, is the SI unit for temperature and is primarily used in scientific contexts. Unlike Fahrenheit and Celsius, the Kelvin scale starts at absolute zero (0 K), the point at which molecular motion ceases, making it essential for thermodynamic calculations. One Kelvin unit is equivalent to one degree Celsius, but the Kelvin scale does not use the term "degrees." Water freezes at 273.15 K and boils at 373.15 K under standard conditions. The Kelvin scale provides an absolute reference point, crucial for precise scientific work.</p>
+
+      <h4>Conversion formulas:</h4>
+      <ul>
+        <li>°C = K − 273.15</li>
+        <li>°F = (K − 273.15) × 9 / 5 + 32</li>
+      </ul>
+
+      <h4>Typical uses:</h4>
+      <ul>
+        <li>Thermodynamics</li>
+        <li>Cryogenics</li>
+        <li>Astronomy and space science</li>
+      </ul>
+
+      <h4>Geographical areas:</h4>
+      <ul>
+        <li>Kelvin is used globally in scientific research and industries where precise temperature measurement is critical, such as in physics, chemistry, and engineering.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section class="about-section">
+  <div class="about-container">
+
+    <p class="about-intro">
+      The TemFlow temperature conversion tool is provided for general informational and educational purposes only and does not constitute professional, scientific, or certified measurement services. While reasonable efforts are made to ensure accuracy, TemFlow does not guarantee the correctness, completeness, or suitability of the results for any specific application.
+    </p>
+
+    <button class="read-toggle" onclick="toggleAbout()" id="readToggle">
+      Read more ▼
+    </button>
+
+    <div class="about-hidden" id="aboutHidden">
+      <p>
+        All information on this site is provided in good faith; however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the site.
+      </p>
+
+      <p>
+        Under no circumstances shall TemFlow be liable for any loss or damage of any kind incurred as a result of the use of the site or reliance on any information provided on the site. Your use of the site and your reliance on any information on the site is solely at your own risk.
+      </p>
+
+      <p>
+        The site may contain links to external websites or content originating from third parties. Such external links are not investigated, monitored, or checked for accuracy, adequacy, validity, reliability, availability, or completeness by TemFlow, and we do not endorse or assume responsibility for any third-party content.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function toggleAbout() {
+  const content = document.getElementById("aboutHidden");
+  const toggle = document.getElementById("readToggle");
+
+  if (content.classList.contains("open")) {
+    content.classList.remove("open");
+    toggle.textContent = "Read more ▼";
+  } else {
+    content.classList.add("open");
+    toggle.textContent = "Read less ▲";
+  }
+}
+</script>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section id="contact" class="contact-section">
+  <div class="contact-wrapper">
+    <div class="contact-card">
+
+      <div class="contact-icon">
+        <i class="fas fa-user"></i>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-brand">TemFlow</div>
+
+        <div class="contact-line">
+          <i class="fas fa-phone"></i>
+          <span>+91 98765 43210</span>
+        </div>
+
+        <div class="contact-line">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:info@temflow.com" target="_blank">info@temflow.com</a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-columns">
+
+    <div class="footer-col">
+      <h4>PRODUCTS & SERVICES</h4>
+      <p>Products</p>
+      <p>Manufacturers</p>
+      <p>Systems</p>
+      <p>Services</p>
+      <p>European Distribution centre</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>YOUR BUSINESS</h4>
+      <p>Market Segments</p>
+      <p>Downloads & Studies</p>
+      <p>Certifications & Standards</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>ABOUT</h4>
+      <p>Press</p>
+      <p>Mission, Vision and Core values</p>
+      <p>fluidity.nonstop</p>
+      <p>Sustainability</p>
+      <p>AxFlow Group</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>CONTACT</h4>
+      <p>Website Policy</p>
+    </div>
+
+  </div>
+
+  <div class="footer-brand">
+    <img src="https://i.ibb.co/yBdfCkYj/Chat-GPT-Image-Jan-14-2026-05-49-17-PM.png" alt="TemFlow Logo" class="footer-logo">
+    <span class="footer-name">TemFlow</span>
+  </div>
+</footer>
